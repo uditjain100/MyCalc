@@ -2,47 +2,51 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
     android:id="@+id/lltv"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/Gray"
+    android:gravity="bottom"
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-
     <TextView
         android:id="@+id/tv0"
+        android:layout_gravity="top"
         android:layout_width="match_parent"
         android:layout_height="100dp"
-        android:background="@color/colorPrimary"
         android:gravity="center"
         android:text="Calculator"
+        android:background = "@drawable/b"
         android:textAlignment="center"
+        android:textColor="@color/White"
         android:textSize="50dp" />
 
-    <TextView
+
+    <EditText
         android:id="@+id/exp"
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:textAlignment="viewEnd"
-        android:textSize="60dp"/>
+        android:textSize="60dp" />
 
     <TextView
         android:id="@+id/res"
-        android:textAlignment="viewEnd"
         android:layout_width="match_parent"
         android:layout_height="100dp"
-        android:textSize="60dp"/>
+        android:textAlignment="viewEnd"
+        android:textSize="60dp" />
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="80dp"
         android:orientation="horizontal"
         android:weightSum="4">
 
         <Button
             android:id="@+id/bt00"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="AC"
             android:textAlignment="center"
@@ -51,7 +55,7 @@
         <Button
             android:id="@+id/bt01"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="("
             android:textAlignment="center"
@@ -60,7 +64,7 @@
         <Button
             android:id="@+id/bt02"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:text=")"
             android:textAlignment="center"
@@ -69,7 +73,7 @@
         <Button
             android:id="@+id/bt03"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="/"
             android:textAlignment="center"
@@ -79,14 +83,14 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="80dp"
         android:orientation="horizontal"
         android:weightSum="4">
 
         <Button
             android:id="@+id/bt10"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="7"
             android:textAlignment="center"
@@ -95,7 +99,7 @@
         <Button
             android:id="@+id/bt11"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="8"
             android:textAlignment="center"
@@ -104,7 +108,7 @@
         <Button
             android:id="@+id/bt12"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="9"
             android:textAlignment="center"
@@ -113,7 +117,7 @@
         <Button
             android:id="@+id/bt13"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="*"
             android:textAlignment="center"
@@ -123,14 +127,14 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="80dp"
         android:orientation="horizontal"
         android:weightSum="4">
 
         <Button
             android:id="@+id/bt20"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="4"
             android:textAlignment="center"
@@ -139,7 +143,7 @@
         <Button
             android:id="@+id/bt21"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="5"
             android:textAlignment="center"
@@ -148,7 +152,7 @@
         <Button
             android:id="@+id/bt22"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="6"
             android:textAlignment="center"
@@ -157,7 +161,7 @@
         <Button
             android:id="@+id/bt23"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="-"
             android:textAlignment="center"
@@ -168,14 +172,14 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="80dp"
         android:orientation="horizontal"
         android:weightSum="4">
 
         <Button
             android:id="@+id/bt30"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="1"
             android:textAlignment="center"
@@ -184,7 +188,7 @@
         <Button
             android:id="@+id/bt31"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="2"
             android:textAlignment="center"
@@ -193,7 +197,7 @@
         <Button
             android:id="@+id/bt32"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="3"
             android:textAlignment="center"
@@ -202,7 +206,7 @@
         <Button
             android:id="@+id/bt33"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="+"
             android:textAlignment="center"
@@ -212,7 +216,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="80dp"
         android:orientation="horizontal"
         android:weightSum="4">
 
@@ -220,16 +224,16 @@
         <Button
             android:id="@+id/bt40"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="BAC"
+            android:background="@drawable/space"
             android:textAlignment="center"
             android:textSize="18dp" />
 
         <Button
             android:id="@+id/bt41"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="0"
             android:textAlignment="center"
@@ -238,7 +242,7 @@
         <Button
             android:id="@+id/bt42"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="."
             android:textAlignment="center"
@@ -247,14 +251,13 @@
         <Button
             android:id="@+id/bt43"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="="
             android:textAlignment="center"
             android:textSize="18dp" />
 
     </LinearLayout>
-
 
 
 </LinearLayout>

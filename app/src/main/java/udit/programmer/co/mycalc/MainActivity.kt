@@ -124,7 +124,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     fun num(str: String) {
 
         if (res.text.isNotEmpty()) {
-            exp.text = ""
+            exp.setText("")
         }
 
         exp.append(str)
@@ -135,7 +135,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     fun operator(str: String) {
 
         if (res.text.isNotEmpty()) {
-            exp.text = ""
+            exp.setText("")
         }
 
         exp.append(res.text)
@@ -150,7 +150,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         var ans = exp.text.toString()
 
         if (ans.isNotEmpty()) {
-            exp.text = ans.substring(0, ans.length - 1)
+            exp.setText(ans.substring(0, ans.length - 1))
         }
 
         res.text = ""
@@ -158,7 +158,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
     fun allclear() {
 
-        exp.text = ""
+        exp.setText("")
         res.text = ""
 
     }
