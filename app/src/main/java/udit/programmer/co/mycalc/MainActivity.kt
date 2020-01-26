@@ -1,6 +1,5 @@
 package udit.programmer.co.mycalc
 
-import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -92,16 +91,9 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             }
 
             R.id.bt43 -> {
-
                 equal()
-
-                //equallogic(exp.text.toString(), Stackcar(), Stack())
-
             }
-
-
         }
-
 
     }
 
@@ -146,14 +138,9 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             exp.text = ""
         }
 
-       /* val abc: String = exp.text.substring(exp.length() - 1)
-
-        if (abc.equals("+") || abc.equals("-") || abc.equals("*") || abc.equals("/")) {
-            return
-        } */
-            exp.append(res.text)
-            exp.append(str)
-            res.text = ""
+        exp.append(res.text)
+        exp.append(str)
+        res.text = ""
 
 
     }
@@ -180,6 +167,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     fun equal() {
 
         try {
+
             val expression = ExpressionBuilder(exp.text.toString()).build()
             val result = expression.evaluate()
             val longres = result.toLong()
@@ -201,125 +189,5 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
     }
 
-    fun equallogic(str: String, stack: Stackcar, stack1: Stack) {
-
-
-        var ans: String = ""
-        var flag: Int = 0
-
-        for (i in 0..str.length - 1) {
-            var ch: Char = str.elementAt(i)
-            if (Character.isLetterOrDigit(ch)) {
-                ans += ch
-            } else if (ch == '(') {
-                stack.push(ch)
-            } else if (ch == ')') {
-                while (!stack.isEmpty && stack.top() != '(') {
-                    var rv: Char = stack.pop()
-                    ans += rv
-                }
-            } else {
-                if (flag == 0) {
-                    stack.push(ch)
-                    flag = 1
-                } else {
-                    if (stack.top() == '(') {
-                        stack.push(ch)
-                    } else if (Prec(stack.top()) < Prec(ch)) {
-                        stack.push(ch)
-                    } else if (Prec(stack.top()) >= Prec(ch)) {
-                        while (!stack.isEmpty && Prec(stack.top()) >= Prec(ch)) {
-                            var rv: Char = stack.pop()
-                            ans += rv
-                        }
-                        stack.push(ch)
-                    }
-                }
-            }
-
-        }
-
-        while (!stack.isEmpty) {
-            var rv: Char = stack.pop()
-            if (rv != '(') {
-                ans += rv
-            }
-        }
-
-        postfix(ans, stack1)
-        //res.text = ans
-
-    }
-
-    fun Prec(ch: Char): Int {
-        if (ch == '+' || ch == '-') {
-            return 1
-        } else if (ch == '*' || ch == '/') {
-            return 2
-        } else if (ch == '^') {
-            return 3
-        } else {
-            return -1
-        }
-    }
-
-    fun postfix(str: String, stack: Stack) {
-
-        var i: Int = 0
-
-        for (i in 0..str.length - 1) {
-
-            var ch: Char = str.elementAt(i)
-
-            if (ch >= '0' && ch <= '9') {
-                stack.push(cti(ch))
-            } else if (ch == '^' || ch == '+' || ch == '-' || ch == '*' || ch == '/') {
-                var a: Int = stack.pop()
-                var b: Int = stack.pop()
-
-                if (ch == '+') {
-                    stack.push(a + b)
-                } else if (ch == '-') {
-                    stack.push(a - b)
-                } else if (ch == '*') {
-                    stack.push(a * b)
-                } else if (ch == '/') {
-                    stack.push(a / b)
-                } else if (ch == '^') {
-                    stack.push(Math.pow(a.toDouble(), b.toDouble()).toInt())
-                }
-            }
-        }
-        if (i == 0) {
-            res.text = stack.data[0].toString()
-        }
-    }
-
-    fun cti(c: Char): Int {
-
-        if (c == '0') {
-            return 0
-        } else if (c == '1') {
-            return 1
-        } else if (c == '2') {
-            return 2
-        } else if (c == '3') {
-            return 3
-        } else if (c == '4') {
-            return 4
-        } else if (c == '5') {
-            return 5
-        } else if (c == '6') {
-            return 6
-        } else if (c == '7') {
-            return 7
-        } else if (c == '8') {
-            return 8
-        } else {
-            return 9
-        }
-
-
-    }
 
 }
